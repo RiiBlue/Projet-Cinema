@@ -14,9 +14,10 @@
 
 ## Fait :
 - SSO/bouton de connexion
-- FIGMA pour avoir une première idée du design, prendre en main l'outil, se rendre compte des attendus, penser la structure du DOM
-- html de movie.html
-- un README
+- FIGMA pour avoir une première idée du design, prendre en main l'outil, se rendre compte des attendus, penser la structure du DOM, *le [31/01/2024]*
+- movie.html *le [31/01/2024]*
+- README *le [31/01/2024]*
+- search.html *le [31/01/2024]*
 
 ### Bonus :
 [Lien vers le Figma en lecture seule](https://www.figma.com/file/Do8NDdsIPiFjUixZ6v07as/CINEMA?type=design&node-id=0%3A1&mode=design&t=atvkWsIbKdoPvm1t-1)
