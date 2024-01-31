@@ -9,6 +9,10 @@
     <header>
         <h1>Nom du film</h1>
     </header>
+    <form class="chercher"> 
+        <input type="text" name="text" class="search" placeholder="Recherchez ici!">
+        <input type="submit" name="submit" class="submit" value="Chercher">
+    </form>
     <section id="infoFilm"><!--Infos sur le film, seront modifiés au chargement avec la requête API-->
         <div id="flexZone"><!--Div pour spécifier une zone de flex-->
             <img/>
@@ -23,6 +27,7 @@
         <p>Date</p>
     </section>
     <button id="redirectssobutton">S'identifier</button>
+    <button id="buttonDelete">Deconnexion</button>
     <script src="sso.js"></script><!--Pour pouvoir se connecter et "poster des commentaires"-->
 </body>
 </html>
