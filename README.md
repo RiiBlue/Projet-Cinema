@@ -3,7 +3,6 @@
 ## A faire :
 - html:
   - index
-  - search
 - CSS:
   - code couleur
   - flex
@@ -18,3 +17,6 @@
 - FIGMA pour avoir une première idée du design, prendre en main l'outil, se rendre compte des attendus, penser la structure du DOM
 - html de movie.html
 - un README
+
+### Bonus :
+[Lien vers le Figma en lecture seule](https://www.figma.com/file/Do8NDdsIPiFjUixZ6v07as/CINEMA?type=design&node-id=0%3A1&mode=design&t=atvkWsIbKdoPvm1t-1)
