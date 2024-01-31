@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>TMDB recherche</title>
+</head>
+<body>
+    <header>
+        <h1>Recherche</h1>
+    </header>
+    <form>
+        <label for="rechercher"></label>
+        <input type="search" placeholder="Entrez ici le nom du film..." id="rechercher"/>
+        <button>Rechercher</button>
+    </form>
+    <h2>Résultats:</h2>
+    <section id="résultats">
+        <!--Ici le contenu qui sera ajouté par le JS-->
+        <section class="filmPreview">
+            <h3>Titre du film</h3>
+            <img alt="Poster du film"/>
+            <p>sortie le:</p>
+        </section>
+    </section>
+    <script src="search.js"></script><!--chargement du JS après le DOM-->
+</body>
+</html>
