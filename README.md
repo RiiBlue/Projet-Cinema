@@ -11,6 +11,7 @@
 - JS:
   - requêtes API pour récupérer les infos de films
   - au clique d'une preview, aller vers movie.html en ayant sauvegardé l'id du film cliqué
+  - pour search.html, utiliser le formulaire de la navbar pour l'API
 
 ## Fait :
 - SSO/bouton de connexion
