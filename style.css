@@ -1,3 +1,7 @@
 #buttonDelete{
     display: none;
 }
+
+#redirectssobutton{
+    display: block;
+}
