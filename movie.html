@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>TMDB test</title>
+</head>
+<body>
+    <header>
+        <h1>Nom du film</h1>
+    </header>
+    <section id="infoFilm"><!--Infos sur le film, seront modifiés au chargement avec la requête API-->
+        <div id="flexZone"><!--Div pour spécifier une zone de flex-->
+            <img/>
+            <p>Description:</p>
+        </div>
+    </section>
+    <h2>Commentaires:</h2>
+    <section id="commentaires">
+        <img><!--Image de profil-->
+        <p>Pseudo</p>
+        <p>Contenu</p>
+        <p>Date</p>
+    </section>
+    <button id="redirectssobutton">S'identifier</button>
+    <script src="sso.js"></script><!--Pour pouvoir se connecter et "poster des commentaires"-->
+</body>
+</html>
