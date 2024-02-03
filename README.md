@@ -14,10 +14,18 @@
 
 ## Fait :
 - SSO/bouton de connexion
-- FIGMA pour avoir une première idée du design, prendre en main l'outil, se rendre compte des attendus, penser la structure du DOM, *le [31/01/2024]*
-- movie.html *le [31/01/2024]*
-- README *le [31/01/2024]*
-- search.html *le [31/01/2024]*
+- FIGMA pour avoir une première idée du design, prendre en main l'outil, se rendre compte des attendus, penser la structure du DOM  
+*[31/01/2024]*
+- movie.html  
+*[31/01/2024]*
+- README  
+*[31/01/2024]*
+- search.html  
+*[31/01/2024]*
+- affichage des infos de movie.html  
+*[03/02/2024]*
+- affichage des commentaires de movie.html  
+*[03/02/2024]*
 
 ## Infos :
 - index :  
