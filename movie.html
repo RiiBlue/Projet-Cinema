@@ -7,27 +7,22 @@
 </head>
 <body>
     <header>
-        <h1>Nom du film</h1>
+        <h1 id="titre">Nom du film</h1>
     </header>
-    <form class="chercher"> 
-        <input type="text" name="text" class="search" placeholder="Recherchez ici!">
-        <input type="submit" name="submit" class="submit" value="Chercher">
-    </form>
     <section id="infoFilm"><!--Infos sur le film, seront modifiés au chargement avec la requête API-->
         <div id="flexZone"><!--Div pour spécifier une zone de flex-->
-            <img/>
-            <p>Description:</p>
+            <img id="poster" alt="poster du film"/>
+            <p id="description">Description:</p>
         </div>
     </section>
     <h2>Commentaires:</h2>
     <section id="commentaires">
-        <img><!--Image de profil-->
+        <img alt="image de profil de la personne ayant posté le commentaire"/><!--Image de profil-->
         <p>Pseudo</p>
         <p>Contenu</p>
         <p>Date</p>
     </section>
     <button id="redirectssobutton">S'identifier</button>
-    <button id="buttonDelete">Deconnexion</button>
-    <script src="sso.js"></script><!--Pour pouvoir se connecter et "poster des commentaires"-->
+    <script src="movie.js"></script><!--Pour pouvoir se connecter et "poster des commentaires"-->
 </body>
 </html>
