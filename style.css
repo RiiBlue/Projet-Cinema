@@ -5,3 +5,8 @@
 #redirectssobutton{
     display: block;
 }
+
+#flexZone{
+    display: flex;
+    flex-direction: row;
+}
