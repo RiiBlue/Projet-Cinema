@@ -1,3 +1,14 @@
+:root {
+    --couleur1: #E8F9FF; /*bleu*/
+    --couleur2: #FFF4F1; /*orange*/
+    --couleur3: #F9E8FF; /*rose*/
+    --couleur4: #F8FFF5; /*vert*/
+}
+
+header {
+    background-color: var(--couleur1);
+}
+
 #buttonDelete{
     display: none;
 }
