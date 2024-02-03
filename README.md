@@ -19,5 +19,18 @@
 - README *le [31/01/2024]*
 - search.html *le [31/01/2024]*
 
+## Infos :
+- index :  
+Page d'accueil, affiche les infos des films en tendance.  
+Au clique d'un film renvoie vers **movie**
+
+- search :  
+Page de recherche, à partir du contenu de la barre de recherche afficher les infos des films correspondants.  
+Comme pour **index** renvoie vers **movie**
+
+- movie :  
+Page contenant plus d'informations sur le film cliqué (via son id)
+
+
 ### Bonus :
 [Lien vers le Figma en lecture seule](https://www.figma.com/file/Do8NDdsIPiFjUixZ6v07as/CINEMA?type=design&node-id=0%3A1&mode=design&t=atvkWsIbKdoPvm1t-1)
