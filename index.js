@@ -1,5 +1,3 @@
-const ssoTmdbReadApiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjg1NTBmYTRlODIzMWE1MWVlZGViNjYyNGRkNzFjNSIsInN1YiI6IjY1YWZjMjA2MTU4Yzg1MDBhYzFkMzdmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-zClmVb2mljRLrKfpdAGMHUNc53hcS2MWsSOUWaj26w'
-
 //requête, films en tendance
 async function getMovie(){
     const options = {
@@ -25,8 +23,8 @@ async function displayMovie(){
     for (let i=0;i<results.length;i++){ //Parcourir tous les résultats   
         let filmsContainer = document.createElement('div')
         filmsContainer.innerHTML = `
-        <h3>${results[i].original_title}</h3>
-        <img src=https://image.tmdb.org/t/p/w500${results[i].poster_path} alt="poster du film ${results[i].original_title}"/>
+        <h3>${results[i].title}</h3>
+        <img src=https://image.tmdb.org/t/p/w500${results[i].poster_path} alt="poster du film ${results[i].title}"/>
         <p>${results[i].release_date}</p>
         `//Affiche dans l'ordre: le titre, l'image du film et sa date de sortie
         filmsContainer.addEventListener('click',function(){
