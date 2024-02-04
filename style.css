@@ -9,15 +9,49 @@ header {
     background-color: var(--couleur1);
 }
 
-#buttonDelete{
-    display: none;
-}
-
-#redirectssobutton{
-    display: block;
-}
-
-#flexZone{
+.flexZone, #flexZone{
     display: flex;
     flex-direction: row;
 }
+
+/*Affichage dans index*/
+.film img {
+    height: 60vh;
+}
+
+.film{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid var(--couleur3);
+    background-color: var(--couleur1);
+    margin-right: 10%;
+    height: fit-content;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+/*Fin de l'affichage pour index*/
+
+
+/*Affichage dans movie*/
+.comment img {
+    max-width: 3%;
+    height: auto;
+    /*Masquer les alt quand l'image n'est pas trouvée*/
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    /*Fin de la méthode*/
+}
+
+.comment {
+    border: solid var(--couleur1);
+    background-color: var(--couleur4);
+    margin-bottom: 2%;
+}
+
+#poster{
+    width: 100%;
+    padding-right: 10%;
+}
+/*Fin de l'affichage pour movie*/
