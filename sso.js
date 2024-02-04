@@ -12,9 +12,7 @@ window.onload = async () => {
     if (!location.search.includes('request_token=')) {
         return
     }
-
     let token = location.search.split('request_token=')[1]?.split('&')?.[0]
-
     if(token) {
         getNewSession(token)
         .then(sessionData => {
@@ -26,9 +24,7 @@ window.onload = async () => {
             console.error(err);
             location.href = 'http://127.0.0.1:5500'
         })
-    }
-
-   
+    }  
 }
 
 
@@ -42,7 +38,6 @@ async function redirectUserToSSO() {
 }
 
 // Cette fonction fait une requete a tmdb pour obtenir  un token vierge a faire valider par le user
-
 async function getNewTMDBToken() {
     const options = {
         method: 'GET',
@@ -51,19 +46,13 @@ async function getNewTMDBToken() {
             Authorization: `Bearer ${ssoTmdbReadApiKey}`
         }
     };
-
     let tokenRequest = await fetch('https://api.themoviedb.org/3/authentication/token/new', options).catch(err => console.error('error:' + err));
     if (!tokenRequest) {
         return
     }
-
-    let tokenData = await tokenRequest.json()
-
-   
-
+    let tokenData = await tokenRequest.json() 
     return tokenData;
 }
-
 
 async function getNewSession(token) {
     const options = {
@@ -75,15 +64,12 @@ async function getNewSession(token) {
         },
         body: JSON.stringify({request_token: token})
     };
-
     let sessionRequest = await fetch('https://api.themoviedb.org/3/authentication/session/new', options).catch(err => console.error('error:' + err));
     if (!sessionRequest) {
         return
     }
-
     let sessionData = await sessionRequest.json()
     console.log(sessionData);
-    
     return sessionData
 }
 
@@ -91,7 +77,6 @@ function deletSession() {
     sessionStorage.removeItem('tmdbSessionId')
     sessionStorage.removeItem('tmdbSessionToken')
 }
-
 
 function hideloginbutton() {
     document.getElementById('buttonDelete').style.display = 'none';
@@ -103,13 +88,11 @@ function hidedecobutton() {
     document.getElementById('redirectssobutton').style.display = 'none';
 }
 
-
 function buttonDelete() {
     let delSession = document.getElementById('buttonDelete');
     delSession.addEventListener('click', () => deletSession())
 }
 buttonDelete()
-
 
 function buttonSignSession() {
     let redirButton = document.getElementById('redirectssobutton');
@@ -122,32 +105,41 @@ function deconnexionaffiche() {
     deco.addEventListener('click',()=> hideloginbutton())
 }
 deconnexionaffiche()
-/* let redirButton = document.getElementById('redirectssobutton');
-console.log(redirButton);
-redirButton.style.display = 'none' */
 
-//ssoTmdbReadApiKey: C'est une clé d'API utilisée pour authentifier les requêtes à l'API TMDB.
-//Fonctions:
-//1. redirectUserToSSO:
-//Cette fonction est appelée pour rediriger l'utilisateur vers la page d'authentification de TMDB.
-//Elle appelle la fonction getNewTMDBToken pour obtenir un nouveau jeton d'authentification TMDB.
-//Si la requête réussit, l'utilisateur est redirigé vers une URL de TMDB avec le nouveau jeton d'authentification.
-//2. getNewTMDBToken:
-//:Cette fonction effectue une requête à l'API TMDB pour obtenir un nouveau jeton d'authentification.
-//Elle utilise la clé d'API (ssoTmdbReadApiKey) dans les en-têtes pour authentifier la requête.
-//La fonction renvoie les données du jeton obtenues en réponse à la requête.
-//3. getNewSession(token):
-//Cette fonction prend un jeton en paramètre et effectue une requête à l'API TMDB pour créer une nouvelle session d'authentification.
-//Elle utilise le jeton passé en paramètre dans le corps de la requête et la clé d'API dans les en-têtes pour authentifier la requête.
-//La fonction renvoie les données de session obtenues en réponse à la requête.
-//4. window.onload:
-//Cette partie du code est exécutée lorsque la fenêtre est complètement chargée.
-//Elle vérifie si le paramètre de recherche de l'URL contient la chaîne 'request_token='.
-//Si c'est le cas, elle extrait le jeton de la chaîne de recherche, appelle getNewSession pour créer une nouvelle session, stocke certaines informations dans la session du navigateur et recharge la page.
-//Comment cela fonctionne:
-//Lorsque la page est chargée, le code vérifie si un jeton est présent dans l'URL.
-//:Si un jeton est trouvé, il est utilisé pour créer une nouvelle session en appelant l'API TMDB.
-//Les données de session sont stockées dans la session du navigateur, et la page est rechargée.
-//Si aucun jeton n'est trouvé dans l'URL, la page reste inchangée.
-//Il y a également une fonction (redirectUserToSSO) qui peut être appelée pour rediriger l'utilisateur vers la page d'authentification de TMDB.
-//Ce code semble être une implémentation de l'authentification à l'aide de tokens avec l'API TMDB dans le contexte d'une application web. 
+//requête, films en tendance
+async function getMovie(){
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${ssoTmdbReadApiKey}`
+        }
+      };
+      let responseDetail = await fetch('https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1', options).catch(err => console.error(err));
+      if(!responseDetail){
+          return
+      }
+      let detailData = await responseDetail.json();
+      console.log(detailData);
+      return detailData;
+}
+
+//affichage des films, ajout à l'html
+async function displayMovie(){
+    let movies = await getMovie()
+    results=movies.results
+    for (let i=0;i<results.length;i++){ //Parcourir tous les résultats   
+        let filmsContainer = document.createElement('div')
+        filmsContainer.innerHTML = `
+        <h3>${results[i].original_title}</h3>
+        <img src=https://image.tmdb.org/t/p/w500${results[i].poster_path} alt="poster du film ${results[i].original_title}"/>
+        <p>${results[i].release_date}</p>
+        `//Affiche dans l'ordre: le titre, l'image du film et sa date de sortie
+        filmsContainer.addEventListener('click',function(){
+            window.location.href=`movie.html?${results[i].id}`;
+        }) //Au clique, redirige vers movie.html du film correspondant
+        let filmsDiv = document.getElementById('films');
+        filmsDiv.appendChild(filmsContainer)
+    }
+}
+displayMovie()
