@@ -1,5 +1,3 @@
-const ssoTmdbReadApiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjg1NTBmYTRlODIzMWE1MWVlZGViNjYyNGRkNzFjNSIsInN1YiI6IjY1YWZjMjA2MTU4Yzg1MDBhYzFkMzdmYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-zClmVb2mljRLrKfpdAGMHUNc53hcS2MWsSOUWaj26w'
-
 window.onload = async () => {
     const id = location.search.split()[0]?.split('?')?.[1]
     console.log(id)
@@ -60,11 +58,12 @@ async function displayComment(id){
     results=comment.results
     for (let i=0;i<results.length;i++){ //Parcourir tous les résultats   
         let commentContainer = document.createElement('section')
+        commentContainer.setAttribute('class',"comment")
         commentContainer.innerHTML = `
-        <div id="flexZone">
-            <img src=${results[i].author_details.avatar_path} alt="image de profil de la personne ayant posté le commentaire"/>
+        <div class="flexZone">
+            <img src=https://image.tmdb.org/t/p/w500${results[i].author_details.avatar_path} alt="image de profil de la personne ayant posté le commentaire"/>
             <p>${results[i].author}</p>
-        <div/>
+        </div>
         <p>${results[i].content}</p>
         <p>${results[i].created_at}</p>
         `//Affiche dans l'ordre: l'image de profil, le pseudo, le contenu, la date du commentaire
