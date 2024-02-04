@@ -1,16 +1,12 @@
 # Projet 1WEBD
 
 ## A faire :
-- html:
-  - index
 - CSS:
   - code couleur
   - flex
   - responsive
 - JS:
-  - requêtes API pour récupérer les infos de films
-  - au clique d'une preview, aller vers movie.html en ayant sauvegardé l'id du film cliqué
-  - pour search.html, utiliser le formulaire de la navbar pour l'API
+  - (poster des commentaires) 
 
 ## Fait :
 - SSO/bouton de connexion
@@ -26,6 +22,14 @@
 *[03/02/2024]*
 - affichage des commentaires de movie.html  
 *[03/02/2024]*
+- index.html  
+*[04/02/2024]*
+- au clique d'une preview, aller vers movie.html en ayant sauvegardé l'id du film cliqué  
+*[04/02/2024]*
+- requêtes API pour récupérer les infos de films  
+*[04/02/2024]*
+- search.js  
+*[04/02/2024]*
 
 ## Infos :
 - index :  
