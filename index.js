@@ -27,6 +27,7 @@ async function displayMovie(){
         <img src=https://image.tmdb.org/t/p/w500${results[i].poster_path} alt="poster du film ${results[i].title}"/>
         <p>${results[i].release_date}</p>
         `//Affiche dans l'ordre: le titre, l'image du film et sa date de sortie
+        filmsContainer.setAttribute('class',"film")
         filmsContainer.addEventListener('click',function(){
             window.location.href=`movie.html?${results[i].id}`;
         }) //Au clique, redirige vers movie.html du film correspondant
