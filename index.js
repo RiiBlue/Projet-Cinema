@@ -1,5 +1,5 @@
 //requête, films en tendance
-async function getMovie(){
+async function getMovie(page){
     const options = {
         method: 'GET',
         headers: {
@@ -7,18 +7,17 @@ async function getMovie(){
           Authorization: `Bearer ${ssoTmdbReadApiKey}`
         }
       };
-      let responseDetail = await fetch('https://api.themoviedb.org/3/movie/popular?language=fr-FR&page=1', options).catch(err => console.error(err));
+      let responseDetail = await fetch('https://api.themoviedb.org/3/movie/popular?language=fr-FR&page='+page, options).catch(err => console.error(err));
       if(!responseDetail){
           return
       }
       let detailData = await responseDetail.json();
-      console.log(detailData);
       return detailData;
 }
 
 //affichage des films, ajout à l'html
-async function displayMovie(){
-    let movies = await getMovie()
+async function displayMovie(page){
+    let movies = await getMovie(page)
     results=movies.results
     for (let i=0;i<results.length;i++){ //Parcourir tous les résultats   
         let filmsContainer = document.createElement('div')
@@ -35,4 +34,14 @@ async function displayMovie(){
         filmsDiv.appendChild(filmsContainer)
     }
 }
-displayMovie()
+//Au chargement, afficher la première page
+let page=1
+displayMovie(page)
+
+//Au clique du bouton charger plus, afficher les films en tendance de la page suivante
+let loadButton = document.getElementById('loadButton')
+loadButton.addEventListener('click', (loadMore))
+async function loadMore(){
+    page+=1
+    displayMovie(page)
+}
