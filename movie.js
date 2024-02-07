@@ -1,6 +1,5 @@
 window.onload = async () => {
     const id = location.search.split()[0]?.split('?')?.[1]
-    console.log(id)
     if (id) {
         displayMovie(id)
         displayComment(id)
@@ -20,7 +19,6 @@ async function getComment(id){
           return
       }
       let detailData = await responseDetail.json();
-      console.log(detailData);
       return detailData;
 }
 
@@ -37,7 +35,6 @@ async function getMovie(id) {
         return
     }
     let detailData = await responseDetail.json();
-    console.log(detailData);
     return detailData;
 }
 
@@ -70,4 +67,29 @@ async function displayComment(id){
         let commentairesDiv = document.getElementById('commentaires');
         commentairesDiv.appendChild(commentContainer)
     }
+}
+
+//Poster un commentaire en local
+async function commentaire() {
+    let commentaire = document.getElementById('commentaire_test').value
+    localStorage.setItem("txt_commentaire", commentaire)
+    //une fois le commentaire stocké en local, j'efface la zone de texte
+    document.getElementById('commentaire_test').value=""
+    document.getElementById('commentaire_test').setAttribute('placeholder',"commentaire envoyé")
+    //j'affiche le texte
+    displayLocalComment(localStorage.txt_commentaire)
+}
+let buttonSend = document.getElementById('sendCom')
+buttonSend.addEventListener('click', (commentaire))
+
+async function displayLocalComment(commentaire){
+    let commentContainer = document.createElement('section')
+        commentContainer.setAttribute('class',"comment")
+        commentContainer.innerHTML = `
+        <p>Vous:</p>
+        <p>${commentaire}</p>
+        <p>${Date()}</p>
+        `
+        let commentairesDiv = document.getElementById('commentaires');
+        commentairesDiv.appendChild(commentContainer)
 }
