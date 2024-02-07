@@ -7,9 +7,21 @@
 </head>
 <body>
     <header>
-        <h1>Recherche</h1>
+        <section class="afficheBouton">
+            <div id="lienBoutton">
+                <a href="index.html" >Accueil</a>
+            </div>
+            <div id="lienBoutton">
+                <a href="search.html">Rechercher</a>
+            </div>
+            <div id="lienBoutton">
+                <a href="#" id = 'redirectssobutton'>S'identifier</a>
+                <a href="#" id = 'buttonDelete'>Deconnexion</a>
+            </div>
+        </section>
     </header>
-    <form>
+    <h1>Rechercher</h1>
+    <form id="form">
         <label for="rechercher"></label>
         <input type="search" placeholder="Entrez ici le nom du film..." id="rechercher"/>
     </form>
