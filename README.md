@@ -1,12 +1,7 @@
 # Projet 1WEBD
 
 ## A faire :
-- CSS:
-  - code couleur
-  - flex
-  - responsive
-- JS:
-  - (poster des commentaires) 
+- Projet TERMINÉ
 
 ## Fait :
 - SSO/bouton de connexion
@@ -30,6 +25,10 @@
 *[04/02/2024]*
 - search.js  
 *[04/02/2024]*
+- commentaires en local storage  
+*[07/02/2024]*
+- RENDU DU PROJET LE:  
+*[07/02/2024]*
 
 ## Infos :
 - index :  
