@@ -12,7 +12,6 @@ async function getMovie(recherche){
           return
       }
       let detailData = await responseDetail.json();
-      console.log(detailData);
       return detailData;
 }
 
