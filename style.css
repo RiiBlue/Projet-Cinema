@@ -7,6 +7,7 @@
 
 header {
     background-color: var(--couleur1);
+    margin-bottom: 5%;
 }
 
 .flexZone, #flexZone{
@@ -48,10 +49,33 @@ header {
     border: solid var(--couleur1);
     background-color: var(--couleur4);
     margin-bottom: 2%;
+    padding: 20px;
 }
 
 #poster{
-    width: 100%;
+    height: 40vh;
     padding-right: 10%;
+    margin-top: 16px;
+}
+
+.afficheBouton {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--couleur1);
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    box-shadow: 5px 5px 8px #abbecf
+}
+
+#lienBoutton{
+    text-align: center;
+    font-size: 2rem;
+}
+
+#titre{
+    margin-top: 30px;
 }
 /*Fin de l'affichage pour movie*/
